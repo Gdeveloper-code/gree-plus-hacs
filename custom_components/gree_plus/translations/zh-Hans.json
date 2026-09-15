@@ -1,16 +1,29 @@
 {
   "config": {
     "abort": {
-      "already_configured": "该账号已配置"
+      "already_configured": "该账号已配置",
+      "reauth_successful": "重新认证成功",
+      "reconfigure_successful": "重新配置成功"
     },
     "error": {
       "invalid_code": "抓取到的授权码无效，请重试。",
+      "invalid_redirect": "重定向地址无效或不属于本次登录。请复制完整地址后重试。",
       "login_failed": "登录失败：{message}",
       "missing_credentials": "请输入账号和密码。",
       "unknown": "未知错误"
     },
     "step": {
       "reauth_confirm": {
+        "data": {
+          "account": "账号",
+          "password": "密码",
+          "region": "地区"
+        },
+        "data_description": {
+          "account": "你的 Gree 账号（手机号 / 邮箱 / Gree ID）。",
+          "password": "你的 Gree 账号密码。",
+          "region": "选择你 Gree 账号所在的服务器地区。"
+        },
         "description": "你的 Gree Plus 会话已过期，请重新输入账号密码以继续使用。",
         "title": "重新认证 Gree Plus"
       },
@@ -41,6 +54,16 @@
         },
         "description": "输入你的 Gree 账号凭据。集成会在服务端自动登录并抓取授权码。",
         "title": "连接 Gree Plus"
+      },
+      "verification": {
+        "data": {
+          "redirect_url": "重定向地址"
+        },
+        "data_description": {
+          "redirect_url": "浏览器地址栏中以 http://localhost/ 开头的完整地址。"
+        },
+        "description": "需要额外验证。打开 [Gree 账号登录页面]({authorize_url})，完成验证码等验证并同意授权。浏览器跳转到 localhost 页面后，复制地址栏中的完整地址并粘贴到下方。请勿反复提交账号登录表单。",
+        "title": "完成验证"
       }
     }
   },

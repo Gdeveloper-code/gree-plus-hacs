@@ -23,6 +23,7 @@ from .GRConst import OP_CLIENT_ID, OP_CLIENT_SECRET
 from .GROauthControl import (
     GreeOAuthError,
     GROauthControl,
+    OAuthInteractionRequired,
     OpenPlatformHost,
     TokenInfo,
     UserInfo,
@@ -48,6 +49,7 @@ __all__ = [
     "GRStandardCloud",
     "GreeOAuthError",
     "GreeStandardCloudError",
+    "OAuthInteractionRequired",
     "OpenPlatformHost",
     "QueryResult",
     "TokenInfo",

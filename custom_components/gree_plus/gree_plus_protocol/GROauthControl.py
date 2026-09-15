@@ -66,6 +66,10 @@ class GreeOAuthError(Exception):
     """Raised when the OAuth2 token/userinfo endpoint fails."""
 
 
+class OAuthInteractionRequired(GreeOAuthError):
+    """Raised when login must be completed in the user's browser."""
+
+
 @dataclass(frozen=True)
 class OpenPlatformHost:
     """Regional service configuration."""
@@ -219,7 +223,7 @@ class GROauthControl:
         except ClientError as err:
             raise GreeOAuthError(f"auth confirm request failed: {err}") from err
         if not code:
-            raise GreeOAuthError(
+            raise OAuthInteractionRequired(
                 "Could not capture authorization code — "
                 "redirect chain broken or CAPTCHA required"
             )

@@ -1,16 +1,29 @@
 {
     "config": {
         "abort": {
-            "already_configured": "Device is already configured"
+            "already_configured": "Device is already configured",
+            "reauth_successful": "Re-authentication was successful",
+            "reconfigure_successful": "Reconfiguration was successful"
         },
         "error": {
             "invalid_code": "The captured authorization code is invalid. Please try again.",
+            "invalid_redirect": "The redirect address is invalid or belongs to another sign-in attempt. Please copy the complete address and try again.",
             "login_failed": "Login failed: {message}",
             "missing_credentials": "Please enter both account and password.",
             "unknown": "Unexpected error"
         },
         "step": {
             "reauth_confirm": {
+                "data": {
+                    "account": "Account",
+                    "password": "Password",
+                    "region": "Region"
+                },
+                "data_description": {
+                    "account": "Your Gree account username (phone / email / Gree ID).",
+                    "password": "Your Gree account password.",
+                    "region": "Select the server region for your Gree account."
+                },
                 "description": "Your Gree Plus session has expired. Re-enter your credentials to continue.",
                 "title": "Re-authenticate Gree Plus"
             },
@@ -41,6 +54,16 @@
                 },
                 "description": "Enter your Gree account credentials. The integration will log in server-side and fetch the authorization code automatically.",
                 "title": "Connect to Gree Plus"
+            },
+            "verification": {
+                "data": {
+                    "redirect_url": "Redirect address"
+                },
+                "data_description": {
+                    "redirect_url": "The complete address beginning with http://localhost/ from the browser address bar."
+                },
+                "description": "Additional verification is required. Open [Gree account sign-in]({authorize_url}), complete the CAPTCHA or other verification, and approve access. When the browser redirects to a localhost page, copy the complete address from the address bar and paste it below. Do not submit the account form repeatedly.",
+                "title": "Complete verification"
             }
         }
     },

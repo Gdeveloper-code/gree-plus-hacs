@@ -28,6 +28,8 @@ Gree Plus is an unofficial, community-maintained Home Assistant integration for 
 
 Select the account region, then sign in with the GREE+ account associated with the devices. Authentication session data is stored by Home Assistant so the integration can reconnect.
 
+If additional verification is requested, open the sign-in link shown by Home Assistant, complete the challenge in your browser, then paste the complete `http://localhost/...` address from the browser address bar. Do not repeatedly submit the credentials form.
+
 ## Refresh Behavior
 
 The integration does not poll continuously. It requests state during setup, after control commands, and when a manual entity update is requested. Changes made outside Home Assistant may not appear until the next refresh.

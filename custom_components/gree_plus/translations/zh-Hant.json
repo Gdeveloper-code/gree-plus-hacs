@@ -1,4 +1,72 @@
 {
+  "config": {
+    "abort": {
+      "already_configured": "此帳號已設定",
+      "reauth_successful": "重新驗證成功",
+      "reconfigure_successful": "重新設定成功"
+    },
+    "error": {
+      "invalid_code": "擷取到的授權碼無效，請重試。",
+      "invalid_redirect": "重新導向位址無效或不屬於本次登入。請複製完整位址後重試。",
+      "login_failed": "登入失敗：{message}",
+      "missing_credentials": "請輸入帳號和密碼。",
+      "unknown": "未知錯誤"
+    },
+    "step": {
+      "reauth_confirm": {
+        "data": {
+          "account": "帳號",
+          "password": "密碼",
+          "region": "地區"
+        },
+        "data_description": {
+          "account": "你的 Gree 帳號（手機號碼 / 電子郵件 / Gree ID）。",
+          "password": "你的 Gree 帳號密碼。",
+          "region": "選擇 Gree 帳號所在的伺服器地區。"
+        },
+        "description": "你的 Gree Plus 工作階段已過期，請重新輸入帳號和密碼。",
+        "title": "重新驗證 Gree Plus"
+      },
+      "reconfigure": {
+        "data": {
+          "account": "帳號",
+          "password": "密碼",
+          "region": "地區"
+        },
+        "data_description": {
+          "account": "你的 Gree 帳號（手機號碼 / 電子郵件 / Gree ID）。",
+          "password": "你的 Gree 帳號密碼。",
+          "region": "選擇 Gree 帳號所在的伺服器地區。"
+        },
+        "description": "更新地區或帳號認證資料。",
+        "title": "重新設定 Gree Plus"
+      },
+      "user": {
+        "data": {
+          "account": "帳號",
+          "password": "密碼",
+          "region": "地區"
+        },
+        "data_description": {
+          "account": "你的 Gree 帳號（手機號碼 / 電子郵件 / Gree ID）。",
+          "password": "你的 Gree 帳號密碼。",
+          "region": "選擇 Gree 帳號所在的伺服器地區。"
+        },
+        "description": "輸入你的 Gree 帳號認證資料。整合會在伺服器端自動登入並擷取授權碼。",
+        "title": "連線至 Gree Plus"
+      },
+      "verification": {
+        "data": {
+          "redirect_url": "重新導向位址"
+        },
+        "data_description": {
+          "redirect_url": "瀏覽器網址列中以 http://localhost/ 開頭的完整位址。"
+        },
+        "description": "需要額外驗證。開啟 [Gree 帳號登入頁面]({authorize_url})，完成驗證碼等驗證並允許存取。瀏覽器重新導向至 localhost 頁面後，複製網址列中的完整位址並貼到下方。請勿重複提交帳號登入表單。",
+        "title": "完成驗證"
+      }
+    }
+  },
   "entity": {
     "climate": {
       "air_conditioner": {

@@ -1,0 +1,112 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "该账号已配置"
+    },
+    "error": {
+      "invalid_code": "抓取到的授权码无效，请重试。",
+      "login_failed": "登录失败：{message}",
+      "missing_credentials": "请输入账号和密码。",
+      "unknown": "未知错误"
+    },
+    "step": {
+      "reauth_confirm": {
+        "description": "你的 Gree Plus 会话已过期，请重新输入账号密码以继续使用。",
+        "title": "重新认证 Gree Plus"
+      },
+      "reconfigure": {
+        "data": {
+          "account": "账号",
+          "password": "密码",
+          "region": "地区"
+        },
+        "data_description": {
+          "account": "你的 Gree 账号（手机号 / 邮箱 / Gree ID）。",
+          "password": "你的 Gree 账号密码。",
+          "region": "选择你 Gree 账号所在的服务器地区。"
+        },
+        "description": "更新你的地区或账号凭据。",
+        "title": "重新配置 Gree Plus"
+      },
+      "user": {
+        "data": {
+          "account": "账号",
+          "password": "密码",
+          "region": "地区"
+        },
+        "data_description": {
+          "account": "你的 Gree 账号（手机号 / 邮箱 / Gree ID）。",
+          "password": "你的 Gree 账号密码。",
+          "region": "选择你 Gree 账号所在的服务器地区。"
+        },
+        "description": "输入你的 Gree 账号凭据。集成会在服务端自动登录并抓取授权码。",
+        "title": "连接 Gree Plus"
+      }
+    }
+  },
+  "entity": {
+    "button": {
+      "refresh": {
+        "name": "刷新状态"
+      }
+    },
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "低风",
+              "s2": "中低风",
+              "s3": "中风",
+              "s4": "中高风",
+              "s5": "高风",
+              "s6": "强劲风",
+              "auto": "自动风",
+              "quiet": "静音风",
+              "strong": "强劲风"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "关机",
+              "idle": "空闲",
+              "cooling": "制冷",
+              "heating": "制热",
+              "drying": "除湿",
+              "fan": "送风"
+            }
+          }
+        },
+        "state": {
+          "off": "关",
+          "heat": "制热",
+          "cool": "制冷",
+          "dry": "除湿",
+          "fan_only": "送风",
+          "auto": "自动"
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "auto_mode_no_temperature": {
+      "message": "该设备在自动模式下不支持调节温度。"
+    },
+    "device_offline": {
+      "message": "设备离线或未响应：{message}"
+    },
+    "turn_off_before_mode_change": {
+      "message": "切换模式前必须先关闭此设备。"
+    }
+  },
+  "issues": {
+    "token_refresh_failed": {
+      "title": "Token 刷新失败",
+      "description": "Gree Plus 无法刷新你的访问令牌。请重新输入账号凭据以恢复访问。\n\n要修复此问题，请使用集成卡片上的 **重新配置** 选项。"
+    },
+    "no_devices": {
+      "title": "未发现设备",
+      "description": "你的 Gree 账号下未发现兼容设备。请确保你的设备与登录账号相同。"
+    }
+  }
+}

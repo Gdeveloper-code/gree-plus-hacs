@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "Baixa",
+              "s2": "Média-baixa",
+              "s3": "Média",
+              "s4": "Média-alta",
+              "s5": "Alta",
+              "s6": "Forte",
+              "auto": "Automático",
+              "quiet": "Silencioso",
+              "strong": "Forte"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "Desligado",
+              "idle": "Ocioso",
+              "cooling": "Refrigerando",
+              "heating": "Aquecendo",
+              "drying": "Desumidificando",
+              "fan": "Ventilando"
+            }
+          }
+        },
+        "state": {
+          "off": "Desligado",
+          "heat": "Aquecer",
+          "cool": "Refrigerar",
+          "dry": "Desumidificar",
+          "fan_only": "Ventilação",
+          "auto": "Automático"
+        }
+      }
+    }
+  }
+}

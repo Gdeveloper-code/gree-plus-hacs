@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "약풍",
+              "s2": "중약풍",
+              "s3": "중풍",
+              "s4": "중강풍",
+              "s5": "강풍",
+              "s6": "파워",
+              "auto": "자동",
+              "quiet": "정음",
+              "strong": "파워"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "끄기",
+              "idle": "대기",
+              "cooling": "냉방",
+              "heating": "난방",
+              "drying": "제습",
+              "fan": "송풍"
+            }
+          }
+        },
+        "state": {
+          "off": "끄기",
+          "heat": "난방",
+          "cool": "냉방",
+          "dry": "제습",
+          "fan_only": "송풍",
+          "auto": "자동"
+        }
+      }
+    }
+  }
+}

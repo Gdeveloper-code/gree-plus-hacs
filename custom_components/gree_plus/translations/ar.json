@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "منخفض",
+              "s2": "متوسط منخفض",
+              "s3": "متوسط",
+              "s4": "متوسط مرتفع",
+              "s5": "مرتفع",
+              "s6": "قوي",
+              "auto": "تلقائي",
+              "quiet": "هادئ",
+              "strong": "قوي"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "إيقاف",
+              "idle": "خمول",
+              "cooling": "تبريد",
+              "heating": "تدفئة",
+              "drying": "تجفيف",
+              "fan": "تهوية"
+            }
+          }
+        },
+        "state": {
+          "off": "إيقاف",
+          "heat": "تدفئة",
+          "cool": "تبريد",
+          "dry": "تجفيف",
+          "fan_only": "تهوية",
+          "auto": "تلقائي"
+        }
+      }
+    }
+  }
+}

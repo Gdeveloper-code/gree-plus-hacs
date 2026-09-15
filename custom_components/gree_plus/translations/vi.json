@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "Thấp",
+              "s2": "Trung bình thấp",
+              "s3": "Trung bình",
+              "s4": "Trung bình cao",
+              "s5": "Cao",
+              "s6": "Mạnh",
+              "auto": "Tự động",
+              "quiet": "Êm",
+              "strong": "Mạnh"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "Tắt",
+              "idle": "Chờ",
+              "cooling": "Làm mát",
+              "heating": "Sưởi ấm",
+              "drying": "Làm khô",
+              "fan": "Quạt"
+            }
+          }
+        },
+        "state": {
+          "off": "Tắt",
+          "heat": "Sưởi ấm",
+          "cool": "Làm mát",
+          "dry": "Làm khô",
+          "fan_only": "Quạt",
+          "auto": "Tự động"
+        }
+      }
+    }
+  }
+}

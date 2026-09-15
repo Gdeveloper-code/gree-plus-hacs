@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "低風",
+              "s2": "中低風",
+              "s3": "中風",
+              "s4": "中高風",
+              "s5": "高風",
+              "s6": "強勁風",
+              "auto": "自動風",
+              "quiet": "靜音風",
+              "strong": "強勁風"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "關機",
+              "idle": "閒置",
+              "cooling": "冷氣",
+              "heating": "暖氣",
+              "drying": "除濕",
+              "fan": "送風"
+            }
+          }
+        },
+        "state": {
+          "off": "關機",
+          "heat": "暖氣",
+          "cool": "冷氣",
+          "dry": "除濕",
+          "fan_only": "送風",
+          "auto": "自動"
+        }
+      }
+    }
+  }
+}

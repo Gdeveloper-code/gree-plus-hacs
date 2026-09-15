@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "Bassa",
+              "s2": "Medio-bassa",
+              "s3": "Media",
+              "s4": "Medio-alta",
+              "s5": "Alta",
+              "s6": "Potente",
+              "auto": "Automatica",
+              "quiet": "Silenziosa",
+              "strong": "Potente"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "Spento",
+              "idle": "Inattivo",
+              "cooling": "Raffreddamento",
+              "heating": "Riscaldamento",
+              "drying": "Deumidificazione",
+              "fan": "Ventilazione"
+            }
+          }
+        },
+        "state": {
+          "off": "Spento",
+          "heat": "Riscalda",
+          "cool": "Raffresca",
+          "dry": "Deumidifica",
+          "fan_only": "Solo ventola",
+          "auto": "Auto"
+        }
+      }
+    }
+  }
+}

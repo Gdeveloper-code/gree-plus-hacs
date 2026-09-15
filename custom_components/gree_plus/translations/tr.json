@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "Düşük",
+              "s2": "Orta-düşük",
+              "s3": "Orta",
+              "s4": "Orta-yüksek",
+              "s5": "Yüksek",
+              "s6": "Güçlü",
+              "auto": "Otomatik",
+              "quiet": "Sessiz",
+              "strong": "Güçlü"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "Kapalı",
+              "idle": "Boşta",
+              "cooling": "Soğutuyor",
+              "heating": "Isıtıyor",
+              "drying": "Kurutuyor",
+              "fan": "Havalandırıyor"
+            }
+          }
+        },
+        "state": {
+          "off": "Kapalı",
+          "heat": "Isıtma",
+          "cool": "Soğutma",
+          "dry": "Kurutma",
+          "fan_only": "Sadece Fan",
+          "auto": "Otomatik"
+        }
+      }
+    }
+  }
+}

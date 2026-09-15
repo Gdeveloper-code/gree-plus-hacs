@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "कम",
+              "s2": "मध्यम-कम",
+              "s3": "मध्यम",
+              "s4": "मध्यम-उच्च",
+              "s5": "उच्च",
+              "s6": "प्रबल",
+              "auto": "स्वचालित",
+              "quiet": "शांत",
+              "strong": "प्रबल"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "बंद",
+              "idle": "निष्क्रिय",
+              "cooling": "कूलिंग",
+              "heating": "हीटिंग",
+              "drying": "ड्राई",
+              "fan": "फैन"
+            }
+          }
+        },
+        "state": {
+          "off": "बंद",
+          "heat": "हीटिंग",
+          "cool": "कूलिंग",
+          "dry": "ड्राई",
+          "fan_only": "फैन",
+          "auto": "ऑटो"
+        }
+      }
+    }
+  }
+}

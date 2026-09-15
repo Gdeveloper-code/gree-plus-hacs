@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "Laag",
+              "s2": "Middel-laag",
+              "s3": "Midden",
+              "s4": "Middel-hoog",
+              "s5": "Hoog",
+              "s6": "Krachtig",
+              "auto": "Automatisch",
+              "quiet": "Stil",
+              "strong": "Krachtig"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "Uit",
+              "idle": "Inactief",
+              "cooling": "Koelen",
+              "heating": "Verwarmen",
+              "drying": "Ontvochtigen",
+              "fan": "Ventileren"
+            }
+          }
+        },
+        "state": {
+          "off": "Uit",
+          "heat": "Verwarmen",
+          "cool": "Koelen",
+          "dry": "Ontvochten",
+          "fan_only": "Alleen ventilatie",
+          "auto": "Auto"
+        }
+      }
+    }
+  }
+}

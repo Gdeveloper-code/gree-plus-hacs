@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "Rendah",
+              "s2": "Sedang-rendah",
+              "s3": "Sedang",
+              "s4": "Sedang-tinggi",
+              "s5": "Tinggi",
+              "s6": "Kuat",
+              "auto": "Otomatis",
+              "quiet": "Senyap",
+              "strong": "Kuat"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "Mati",
+              "idle": "Idle",
+              "cooling": "Pendinginan",
+              "heating": "Pemanasan",
+              "drying": "Pengeringan",
+              "fan": "Kipas"
+            }
+          }
+        },
+        "state": {
+          "off": "Mati",
+          "heat": "Pemanasan",
+          "cool": "Pendinginan",
+          "dry": "Pengeringan",
+          "fan_only": "Kipas",
+          "auto": "Otomatis"
+        }
+      }
+    }
+  }
+}

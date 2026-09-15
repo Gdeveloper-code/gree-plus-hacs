@@ -1,0 +1,112 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured"
+        },
+        "error": {
+            "invalid_code": "The captured authorization code is invalid. Please try again.",
+            "login_failed": "Login failed: {message}",
+            "missing_credentials": "Please enter both account and password.",
+            "unknown": "Unexpected error"
+        },
+        "step": {
+            "reauth_confirm": {
+                "description": "Your Gree Plus session has expired. Re-enter your credentials to continue.",
+                "title": "Re-authenticate Gree Plus"
+            },
+            "reconfigure": {
+                "data": {
+                    "account": "Account",
+                    "password": "Password",
+                    "region": "Region"
+                },
+                "data_description": {
+                    "account": "Your Gree account username (phone / email / Gree ID).",
+                    "password": "Your Gree account password.",
+                    "region": "Select the server region for your Gree account."
+                },
+                "description": "Update your region or account credentials.",
+                "title": "Reconfigure Gree Plus"
+            },
+            "user": {
+                "data": {
+                    "account": "Account",
+                    "password": "Password",
+                    "region": "Region"
+                },
+                "data_description": {
+                    "account": "Your Gree account username (phone / email / Gree ID).",
+                    "password": "Your Gree account password.",
+                    "region": "Select the server region for your Gree account."
+                },
+                "description": "Enter your Gree account credentials. The integration will log in server-side and fetch the authorization code automatically.",
+                "title": "Connect to Gree Plus"
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "refresh": {
+                "name": "Refresh status"
+            }
+        },
+        "climate": {
+            "air_conditioner": {
+                "state": {
+                    "auto": "Auto",
+                    "cool": "Cool",
+                    "dry": "Dry",
+                    "fan_only": "Fan",
+                    "heat": "Heat",
+                    "off": "Off"
+                },
+                "state_attributes": {
+                    "fan_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "quiet": "Quiet",
+                            "s1": "Low",
+                            "s2": "Medium low",
+                            "s3": "Medium",
+                            "s4": "Medium high",
+                            "s5": "High",
+                            "s6": "Strong",
+                            "strong": "Strong"
+                        }
+                    },
+                    "hvac_action": {
+                        "state": {
+                            "cooling": "Cooling",
+                            "drying": "Drying",
+                            "fan": "Fan",
+                            "heating": "Heating",
+                            "idle": "Idle",
+                            "off": "Off"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "auto_mode_no_temperature": {
+            "message": "The temperature cannot be adjusted in auto mode on this device."
+        },
+        "device_offline": {
+            "message": "The device is offline or did not respond: {message}"
+        },
+        "turn_off_before_mode_change": {
+            "message": "This device must be turned off before switching modes."
+        }
+    },
+    "issues": {
+        "no_devices": {
+            "description": "No compatible devices were found on your Gree account. Make sure your devices use the same account that was used to log in.",
+            "title": "No devices found"
+        },
+        "token_refresh_failed": {
+            "description": "Gree Plus was unable to refresh your access token. Please re-enter your account credentials to restore access.\n\nTo fix this issue, use the **Reconfigure** option on the integration card.",
+            "title": "Token refresh failed"
+        }
+    }
+}

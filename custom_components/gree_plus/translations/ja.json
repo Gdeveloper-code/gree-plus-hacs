@@ -1,0 +1,41 @@
+{
+  "entity": {
+    "climate": {
+      "air_conditioner": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "s1": "低",
+              "s2": "中低",
+              "s3": "中",
+              "s4": "中高",
+              "s5": "高",
+              "s6": "パワフル",
+              "auto": "自動",
+              "quiet": "静音",
+              "strong": "パワフル"
+            }
+          },
+          "hvac_action": {
+            "state": {
+              "off": "オフ",
+              "idle": "アイドル",
+              "cooling": "冷房",
+              "heating": "暖房",
+              "drying": "除湿",
+              "fan": "送風"
+            }
+          }
+        },
+        "state": {
+          "off": "オフ",
+          "heat": "暖房",
+          "cool": "冷房",
+          "dry": "除湿",
+          "fan_only": "送風",
+          "auto": "自動"
+        }
+      }
+    }
+  }
+}

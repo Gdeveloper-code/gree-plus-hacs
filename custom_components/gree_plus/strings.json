@@ -62,7 +62,7 @@
         "data_description": {
           "redirect_url": "The complete address beginning with http://localhost/ from the browser address bar."
         },
-        "description": "Additional verification is required. Open [Gree account sign-in]({authorize_url}), complete the CAPTCHA or other verification, and approve access. When the browser redirects to a localhost page, copy the complete address from the address bar and paste it below. Do not submit the account form repeatedly.",
+        "description": "Automatic sign-in stopped because additional verification is required. Do not submit the account and password again.\n\n1. Open [Gree account sign-in]({authorize_url}).\n2. Complete the CAPTCHA or other verification and approve access.\n3. The browser will redirect to `http://localhost/...`. The page may fail to load; this is expected.\n4. Copy the complete address from the browser address bar and paste it below.",
         "title": "Complete verification"
       }
     }

@@ -1,6 +1,6 @@
 # Gree Plus for Home Assistant
 
-[English](README.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md)
+[English](README.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Français](README.fr.md) | [Português (Brasil)](README.pt-BR.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md)
 
 Gree Plus 是一个非官方、由社区维护的 Home Assistant 集成，面向技术爱好者。它通过用户的 GREE+ 云端账户，将受支持的 GREE+ 空调接入 Home Assistant。
 
@@ -45,6 +45,8 @@ Gree Plus 是一个非官方、由社区维护的 Home Assistant 集成，面向
 请通过仓库的 Issue Tracker 报告问题。上传诊断信息或日志前，务必删除账户标识、认证数据、设备标识、设备名称和位置信息。
 
 ## 免责声明
+
+本项目仅以 Home Assistant 集成的形式开发和提供支持；维护者不支持或认可将其用于无关的商业产品或服务。
 
 本项目与珠海格力电器股份有限公司不存在隶属、认可或支持关系。GREE 及相关标识归其权利人所有。云端服务可能随时变更或停止，恕不另行通知。使用本集成所产生的风险由用户自行承担；启用自动化前请认真检查，并保留官方控制方式。维护者不对服务中断、设备误操作、数据丢失或由此造成的损失承担责任。
 

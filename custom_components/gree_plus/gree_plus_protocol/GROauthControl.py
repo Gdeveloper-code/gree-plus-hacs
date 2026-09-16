@@ -9,7 +9,6 @@ from urllib.parse import parse_qs, quote, urlencode, urljoin, urlparse
 
 import aiohttp
 from aiohttp import ClientError, ClientSession, ClientTimeout
-from yarl import URL
 
 from .GRConst import OP_CLIENT_ID, OP_CLIENT_SECRET
 
@@ -137,8 +136,8 @@ class GROauthControl:
         """Initialize for a regional open-platform host.
 
         Args:
-            session: HA's shared aiohttp ClientSession
-                (``async_get_clientsession``); never construct one here.
+            session: HA's shared aiohttp ClientSession. Login attempts reuse its
+                connector but keep an isolated cookie jar.
             region: The region key the user picked at login. ``None`` → default.
         """
         self._session = session
@@ -171,57 +170,59 @@ class GROauthControl:
             f"{self.base_url}{_AUTHORIZE_PATH}?client_id={OP_CLIENT_ID}"
             f"&response_type=code&redirect_uri={quote(REDIRECT_URI, safe='')}"
         )
-        try:
-            async with self._session.get(
-                authorize_url, timeout=_REQUEST_TIMEOUT, allow_redirects=True
-            ) as resp:
-                await resp.read()
-        except ClientError as err:
-            raise GreeOAuthError(f"authorize request failed: {err}") from err
+        async with self._create_temp_session() as login_session:
+            try:
+                async with login_session.get(
+                    authorize_url, timeout=_REQUEST_TIMEOUT, allow_redirects=True
+                ) as resp:
+                    await resp.read()
+            except ClientError as err:
+                raise GreeOAuthError(f"authorize request failed: {err}") from err
 
-        hashed_password = _md5(_md5(password) + password)
-        try:
-            async with self._session.post(
-                f"{self.base_url}{_LOGIN_PATH}",
-                json={"username": account, "password": hashed_password},
-                timeout=_REQUEST_TIMEOUT,
-            ) as resp:
-                tellogin = await resp.json(content_type=None)
-        except ClientError as err:
-            raise GreeOAuthError(f"tellogin request failed: {err}") from err
-        if not isinstance(tellogin, dict) or tellogin.get("code") != 200:
-            msg = (
-                tellogin.get("message", "Login failed")
-                if isinstance(tellogin, dict)
-                else "Unexpected tellogin response format"
-            )
-            raise GreeOAuthError(msg)
+            hashed_password = _md5(_md5(password) + password)
+            try:
+                async with login_session.post(
+                    f"{self.base_url}{_LOGIN_PATH}",
+                    json={"username": account, "password": hashed_password},
+                    timeout=_REQUEST_TIMEOUT,
+                ) as resp:
+                    tellogin = await resp.json(content_type=None)
+            except ClientError as err:
+                raise GreeOAuthError(f"tellogin request failed: {err}") from err
+            if not isinstance(tellogin, dict) or tellogin.get("code") != 200:
+                msg = (
+                    tellogin.get("message", "Login failed")
+                    if isinstance(tellogin, dict)
+                    else "Unexpected tellogin response format"
+                )
+                raise GreeOAuthError(msg)
 
-        try:
-            async with self._session.get(
-                f"{self.base_url}{_AUTH_PAGE_PATH}", timeout=_REQUEST_TIMEOUT
-            ) as resp:
-                auth_body = await resp.text()
-        except ClientError as err:
-            raise GreeOAuthError(f"auth page request failed: {err}") from err
+            try:
+                async with login_session.get(
+                    f"{self.base_url}{_AUTH_PAGE_PATH}", timeout=_REQUEST_TIMEOUT
+                ) as resp:
+                    auth_body = await resp.text()
+            except ClientError as err:
+                raise GreeOAuthError(f"auth page request failed: {err}") from err
 
-        auth_inputs: dict[str, str] = {}
-        for match in re.finditer(
-            r'<input[^>]+name="([^"]*)"[^>]*value="([^"]*)"', auth_body, re.IGNORECASE
-        ):
-            auth_inputs[match.group(1)] = match.group(2)
-        auth_data = auth_inputs or {"SelectApp": "true", "SelectBase": "true"}
+            auth_inputs: dict[str, str] = {}
+            for match in re.finditer(
+                r'<input[^>]+name="([^"]*)"[^>]*value="([^"]*)"',
+                auth_body,
+                re.IGNORECASE,
+            ):
+                auth_inputs[match.group(1)] = match.group(2)
+            auth_data = auth_inputs or {"SelectApp": "true", "SelectBase": "true"}
 
-        try:
-            async with self._create_temp_session() as temp_session:
+            try:
                 code = await _follow_until_redirect(
-                    temp_session,
+                    login_session,
                     f"{self.base_url}{_AUTH_PAGE_PATH}",
                     "POST",
                     auth_data,
                 )
-        except ClientError as err:
-            raise GreeOAuthError(f"auth confirm request failed: {err}") from err
+            except ClientError as err:
+                raise GreeOAuthError(f"auth confirm request failed: {err}") from err
         if not code:
             raise OAuthInteractionRequired(
                 "Could not capture authorization code — "
@@ -235,18 +236,12 @@ class GROauthControl:
         return "Basic " + base64.b64encode(raw).decode()
 
     def _create_temp_session(self) -> ClientSession:
-        """Create a session that preserves login state across redirects."""
-        jar = aiohttp.CookieJar()
-        for cookie in self._session.cookie_jar:
-            jar.update_cookies(
-                {cookie.key: cookie.value},
-                URL(f"https://{self._host.host}{cookie.get('path', '/')}"),
-            )
+        """Create an isolated session for one credential attempt."""
         return ClientSession(
             connector=self._session.connector,
             connector_owner=False,
             trust_env=False,
-            cookie_jar=jar,
+            cookie_jar=aiohttp.CookieJar(),
         )
 
     async def _request_token(self, body: dict[str, str]) -> TokenInfo:

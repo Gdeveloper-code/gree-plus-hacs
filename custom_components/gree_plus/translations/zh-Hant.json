@@ -62,7 +62,7 @@
         "data_description": {
           "redirect_url": "瀏覽器網址列中以 http://localhost/ 開頭的完整位址。"
         },
-        "description": "需要額外驗證。開啟 [Gree 帳號登入頁面]({authorize_url})，完成驗證碼等驗證並允許存取。瀏覽器重新導向至 localhost 頁面後，複製網址列中的完整位址並貼到下方。請勿重複提交帳號登入表單。",
+        "description": "自動登入已停止，因為需要額外驗證。請勿再次提交帳號和密碼。\n\n1. 開啟 [Gree 帳號登入頁面]({authorize_url})。\n2. 完成驗證碼等驗證並允許存取。\n3. 瀏覽器會重新導向至 `http://localhost/...`。頁面可能無法開啟，這是正常現象。\n4. 複製瀏覽器網址列中的完整位址並貼到下方。",
         "title": "完成驗證"
       }
     }

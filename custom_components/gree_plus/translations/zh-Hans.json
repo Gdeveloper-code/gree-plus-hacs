@@ -62,7 +62,7 @@
         "data_description": {
           "redirect_url": "浏览器地址栏中以 http://localhost/ 开头的完整地址。"
         },
-        "description": "需要额外验证。打开 [Gree 账号登录页面]({authorize_url})，完成验证码等验证并同意授权。浏览器跳转到 localhost 页面后，复制地址栏中的完整地址并粘贴到下方。请勿反复提交账号登录表单。",
+        "description": "自动登录已停止，因为需要额外验证。请勿再次提交账号和密码。\n\n1. 打开 [Gree 账号登录页面]({authorize_url})。\n2. 完成验证码等验证并同意授权。\n3. 浏览器会跳转到 `http://localhost/...`。页面可能无法打开，这是正常现象。\n4. 复制浏览器地址栏中的完整地址并粘贴到下方。",
         "title": "完成验证"
       }
     }

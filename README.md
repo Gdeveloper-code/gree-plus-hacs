@@ -1,15 +1,35 @@
-# Gree Plus for Home Assistant
+<p align="center">
+  <img src="custom_components/gree_plus/brand/icon.png" alt="Gree Plus" width="128">
+</p>
 
-[English](README.md) | [Simplified Chinese](README.zh-Hans.md) | [Traditional Chinese](README.zh-Hant.md)
+<h1 align="center">Gree Plus for Home Assistant</h1>
+
+<p align="center">
+  An unofficial cloud integration for supported GREE+ air conditioners.
+</p>
+
+<p align="center">
+  <img alt="Home Assistant 2026.9.1+" src="https://img.shields.io/badge/Home%20Assistant-2026.9.1%2B-41BDF5?logo=home-assistant&logoColor=white">
+  <img alt="HACS custom integration" src="https://img.shields.io/badge/HACS-Custom-41BDF5">
+  <img alt="Release 0.1.1" src="https://img.shields.io/badge/Release-0.1.1-blue">
+</p>
+
+[English](README.md) | [German](README.de.md) | [Spanish](README.es.md) | [French](README.fr.md) | [Brazilian Portuguese](README.pt-BR.md) | [Japanese](README.ja.md) | [Korean](README.ko.md) | [Simplified Chinese](README.zh-Hans.md) | [Traditional Chinese](README.zh-Hant.md)
 
 Gree Plus is an unofficial, community-maintained Home Assistant integration for technology enthusiasts. It connects supported GREE+ air conditioners to Home Assistant through the user's GREE+ cloud account.
 
-## Features
+> [!IMPORTANT]
+> This project is not an official GREE product. It depends on a cloud service that may change or become unavailable.
 
-- Power, HVAC mode, target temperature, and fan speed controls.
-- Celsius, Fahrenheit, and model-dependent temperature steps.
-- State refresh after setup and control commands.
-- Manual refresh without background polling.
+## Supported Controls
+
+| Capability | Support | Notes |
+| --- | --- | --- |
+| Power | Yes | Turn the air conditioner on or off. |
+| HVAC mode | Yes | Available modes depend on the device. |
+| Target temperature | Yes | Celsius, Fahrenheit, and model-dependent steps. |
+| Fan speed | Yes | Available speeds depend on the device. |
+| Manual refresh | Yes | No continuous background polling. |
 
 ## Requirements
 
@@ -17,18 +37,20 @@ Gree Plus is an unofficial, community-maintained Home Assistant integration for 
 - A GREE+ account with at least one supported air conditioner.
 - Internet access from Home Assistant to the cloud service.
 
-## Installation
+## Quick Start
 
 1. Open HACS in Home Assistant.
 2. Add this repository as a custom repository in the **Integration** category.
 3. Download **Gree Plus** and restart Home Assistant.
 4. Open **Settings > Devices & services > Add integration** and select **Gree Plus**.
 
-## Configuration
+## Authentication and Configuration
 
 Select the account region, then sign in with the GREE+ account associated with the devices. Authentication session data is stored by Home Assistant so the integration can reconnect.
 
 If additional verification is requested, open the sign-in link shown by Home Assistant, complete the challenge in your browser, then paste the complete `http://localhost/...` address from the browser address bar. Do not repeatedly submit the credentials form.
+
+Credentials are submitted only for authentication. Home Assistant stores the resulting session data in the config entry. Never include account details, tokens, device identifiers, or locations in issue reports.
 
 ## Refresh Behavior
 
@@ -40,11 +62,13 @@ The integration does not poll continuously. It requests state during setup, afte
 - Available modes and temperature steps depend on device capabilities.
 - Operation depends on the availability and compatibility of the cloud service.
 
-## Support and Privacy
+## Support
 
 Report defects through the repository issue tracker. Before attaching diagnostics or logs, remove account identifiers, authentication data, device identifiers, names, and location information.
 
 ## Disclaimer
+
+This project is developed and supported exclusively as a Home Assistant integration. The maintainers do not support or endorse its use in unrelated commercial products or services.
 
 This project is not affiliated with, endorsed by, or supported by Gree Electric Appliances, Inc. GREE and related marks belong to their respective owners. The cloud service may change or become unavailable without notice. Use this integration at your own risk, review automations before enabling them, and retain access to an official control method. The maintainers are not responsible for service interruptions, unintended device operation, data loss, or resulting damage.
 
